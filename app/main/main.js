@@ -34,12 +34,12 @@ angular.module('main', [
           }
         }
       })
-      .state('main.debug', {
-        url: '/debug',
+      .state('main.wizard', {
+        url: '/wizard',
         views: {
-          'tab-debug': {
-            templateUrl: 'main/templates/debug.html',
-            controller: 'DebugCtrl as ctrl'
+          'tab-wizard': {
+            templateUrl: 'main/templates/wizard.html',
+            controller: 'WizardCtrl as ctrl'
           }
         }
       })

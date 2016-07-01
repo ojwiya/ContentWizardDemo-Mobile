@@ -3,14 +3,25 @@
   <ion-content class="padding">
 
     <!-- content goes here -->
-    <ion-list>
-      <ion-item class="item item-divider">
-        This is your wizard template!
-      </ion-item>
-      <ion-item class="item item-icon">
-        Yeiiii!
-      </ion-item>
-    </ion-list>
+<div class="container slider">
+    <div ng-repeat="card in ctrl.wizard.cards" class="card slide-animation nonDraggableImage"
+         ng-swipe-right="ctrl.wizard.nextSlide()" ng-swipe-left="ctrl.wizard.prevSlide()"
+         ng-hide="!ctrl.wizard.isCurrentSlideIndex($index)">
+      
+      {{ctrl.wizard.slide.content}}
+
+    <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="card in ctrl.wizard.cards">
+                    <a href="#" ng-class="{'active':ctrl.wizard.isCurrentSlideIndex($index)}"
+                       ng-click="ctrl.wizard.setCurrentSlideIndex($index);">{{card.content}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
   </ion-content>
 </ion-view>
