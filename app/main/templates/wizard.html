@@ -4,12 +4,11 @@
 
     <!-- content goes here -->
 <div class="container slider">
-    <div ng-repeat="card in ctrl.wizard.cards" class="card slide-animation nonDraggableImage"
+    <img ng-repeat="card in ctrl.wizard.cards" class="card slide-animation nonDraggableImage"
          ng-swipe-right="ctrl.wizard.nextSlide()" ng-swipe-left="ctrl.wizard.prevSlide()"
-         ng-hide="!ctrl.wizard.isCurrentSlideIndex($index)">
+         ng-hide="!ctrl.wizard.isCurrentSlideIndex($index)" ng-src="ctrl.wizard.slide.image" >
       
-      {{ctrl.wizard.slide.content}}
-
+     
     <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
     <a class="arrow next" href="#" ng-click="prevSlide()"></a>
     <nav class="nav">

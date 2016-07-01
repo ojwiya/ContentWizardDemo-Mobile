@@ -1,9 +1,8 @@
 'use strict';
 angular.module('main')
 .controller('UserCtrl', function ($log, $rootScope) {
-
-  this.user = {};
-  this.updateResult = function (type, result) {
+ 
+ this.updateResult = function (type, result) {
     $log.log(result);
     this.user.resultType = type;
     this.user.result = result;
