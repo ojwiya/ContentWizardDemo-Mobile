@@ -5,7 +5,7 @@
   },
   "scripts": {
     "test": "gulp build --minify && gulp karma",
-    "postinstall" : "gulp build"
+    "postinstall" : "bower install && gulp build"
   },
   "devDependencies": {
     "browser-sync": "^2.8.3",
