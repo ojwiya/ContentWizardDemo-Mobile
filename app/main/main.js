@@ -42,5 +42,16 @@ angular.module('main', [
             controller: 'DebugCtrl as ctrl'
           }
         }
+      })
+      .state('main.user', {
+        url: '/user',
+        views: {
+          // IMPORTANT: the name of the view for the sidemenu
+          // starter template is 'pageContent' instead of 'tab-user'
+          'tab-user': {
+            templateUrl: 'main/templates/user.html',
+            controller: 'UserCtrl as ctrl'
+          }
+        }
       });
 });

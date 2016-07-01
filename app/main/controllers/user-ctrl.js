@@ -21,13 +21,13 @@ angular.module('main')
 
   // tries to sign the user up and displays the result in the UI
   this.signup = function () {
-    Ionic.Auth.signup(this.user)
+    ionic.Auth.signup(this.user)
     .then(responseCB)
     .catch(rejectionCB);
   };
   // tries to sign in the user and displays the result in the UI
   this.signin = function () {
-    Ionic.Auth.login('basic', {'remember': true}, this.user)
+    ionic.Auth.login('basic', {'remember': true}, this.user)
     .then(responseCB)
     .catch(rejectionCB);
   };
