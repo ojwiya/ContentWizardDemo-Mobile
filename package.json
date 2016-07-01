@@ -4,7 +4,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "gulp build --minify && gulp karma"
+    "test": "gulp build --minify && gulp karma",
+    "postinstall" : "gulp build"
   },
   "devDependencies": {
     "browser-sync": "^2.8.3",
