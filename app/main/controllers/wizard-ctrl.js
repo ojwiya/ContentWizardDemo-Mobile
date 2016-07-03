@@ -6,13 +6,14 @@ angular.module('main')
  
  this.currentCard = {};
  this.currentIndex = 0;
+ this.direction = 'left';
  
  this.cards = [
-            {'id': 0, 'image': 'images/img00.jpg', 'content': 'Image 00'},
-            {'id': 1, 'image': 'images/img01.jpg', 'content': 'Image 01'},
-            {'id': 2, 'image': 'images/img02.jpg', 'content': 'Image 02'},
-            {'id': 3, 'image': 'images/img03.jpg', 'content': 'Image 03'},
-            {'id': 4, 'image': 'images/img04.jpg', 'content': 'Image 04'}
+            {'id': 0, 'image': 'main/assets/images/img00.jpg', 'content': 'Image 00'},
+            {'id': 1, 'image': 'main/assets/images/img01.jpg', 'content': 'Image 01'},
+            {'id': 2, 'image': 'main/assets/images/img02.jpg', 'content': 'Image 02'},
+            {'id': 3, 'image': 'main/assets/images/img03.jpg', 'content': 'Image 03'},
+            {'id': 4, 'image': 'main/assets/images/img04.jpg', 'content': 'Image 04'}
         ];
  
   
