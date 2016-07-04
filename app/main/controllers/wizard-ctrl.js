@@ -7,6 +7,8 @@ angular.module('main')
  this.currentCard = {};
  this.currentIndex = 0;
  this.direction = 'left';
+ this.currentPage = 0;
+ this.pageSize = 2;
  
  this.cards = [
             {'id': 0, 'image': 'main/assets/images/img00.jpg', 'content': 'Image 00'},
@@ -35,5 +37,10 @@ angular.module('main')
             this.direction = 'right';
             this.currentIndex = (this.currentIndex > 0) ? --this.currentIndex : this.cards.length - 1;
         };
+        
+    this.numberOfPages = function(){
+        return Math.ceil(this.cards.length / this.pageSize);                
+    }
+
 
 });

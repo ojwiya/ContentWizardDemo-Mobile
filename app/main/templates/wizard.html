@@ -4,7 +4,7 @@
 
     <!-- content goes here -->
         <div ng-hide="!ctrl.isCurrentSlideIndex($index)"
-             ng-repeat="card in ctrl.cards | orderBy:'id'" 
+             ng-repeat="card in ctrl.cards | orderBy:'id' | wizardStartFrom:ctrl.currentPage*ctrl.pageSize | limitTo:ctrl.pageSize" 
              class="list card">
 
       <div class="item" ng-hide="!ctrl.isCurrentSlideIndex($index)">
@@ -23,6 +23,13 @@
      </div>
 
   </ion-content>
+     <button ng-disabled="ctrl.currentPage == 0" ng-click="ctrl.currentPage=ctrl.currentPage-1">
+        Previous
+    </button>
+    {{ctrl.currentPage+1}}/{{ctrl.numberOfPages()}}
+    <button ng-disabled="ctrl.currentPage >= ctrl.cards.length/ctrl.pageSize - 1" ng-click="ctrl.currentPage=ctrl.currentPage+1">
+        Next
+    </button>
 
 </ion-view>
 
