@@ -8,7 +8,7 @@ angular.module('main')
  this.currentIndex = 0;
  this.direction = 'left';
  this.currentPage = 0;
- this.pageSize = 2;
+ this.pageSize = 5;
  
  this.cards = [
             {'id': 0, 'image': 'main/assets/images/img00.jpg', 'content': 'Image 00'},
