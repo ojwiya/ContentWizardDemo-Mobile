@@ -1,0 +1,35 @@
+<ion-view view-title="wizard module">
+  <!-- do you want padding? -->
+  <ion-content>
+
+    <!-- content goes here -->
+        <div ng-hide="!ctrl.isCurrentSlideIndex($index)"
+             ng-repeat="card in ctrl.cards | orderBy:'id' | wizardStartFrom:ctrl.currentPage*ctrl.pageSize | limitTo:ctrl.pageSize" 
+             class="list card">
+
+      <div class="item" ng-hide="!ctrl.isCurrentSlideIndex($index)">
+          <div class="item item-body">
+             <img  class="full-image slide-animation nonDraggableImage"
+         on-swipe-right="ctrl.nextSlide()" on-swipe-left="ctrl.prevSlide()"
+          ng-src="{{card.image}}"  >
+            <h2>{{$index}}/{{ctrl.cards.length}}</h2>
+            <p>{{card.image}}</p>
+            <p>
+              {{card.content}}
+            </p>
+          </div>
+
+        </div>
+     </div>
+
+  </ion-content>
+     <button ng-disabled="ctrl.currentPage == 0" ng-click="ctrl.currentPage=ctrl.currentPage-1">
+        Previous
+    </button>
+    {{ctrl.currentPage+1}}/{{ctrl.numberOfPages()}}
+    <button ng-disabled="ctrl.currentPage >= ctrl.cards.length/ctrl.pageSize - 1" ng-click="ctrl.currentPage=ctrl.currentPage+1">
+        Next
+    </button>
+
+</ion-view>
+
