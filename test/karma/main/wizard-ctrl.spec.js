@@ -10,11 +10,26 @@ describe('module: main, controller: WizardCtrl', function () {
   // instantiate controller
   var WizardCtrl;
   beforeEach(inject(function ($controller) {
-    WizardCtrl = $controller('WizardCtrl');
+    WizardCtrl = $controller('WizardCtrl', {});
+    WizardCtrl.currentIndex = 1;
+
   }));
 
   it('should do something', function () {
     expect(!!WizardCtrl).toBe(true);
   });
+  
+   it('should set the index of the next image', function() {
+        WizardCtrl.nextSlide();
+        expect(WizardCtrl.direction).toBe('right');
+        expect(WizardCtrl.currentIndex).toBe(0);
+    });
+
+   it('should set the index of the  previous image', function() {
+        WizardCtrl.prevSlide();
+        expect(WizardCtrl.direction).toBe('left');
+        expect(WizardCtrl.currentIndex).toBe(2);
+    });
+    
 
 });

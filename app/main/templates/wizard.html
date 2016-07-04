@@ -1,25 +1,28 @@
 <ion-view view-title="wizard module">
   <!-- do you want padding? -->
-  <ion-content class="padding">
+  <ion-content>
 
     <!-- content goes here -->
-    <img ng-repeat="card in ctrl.cards" class="card slide-animation nonDraggableImage"
-         on-swipe-right="ctrl.nextSlide()" on-swipe-left="ctrl.prevSlide()"
-         ng-hide="!ctrl.isCurrentSlideIndex($index)" ng-src="{{card.image}}" >
-      
-     
-    <a class="button icon-left ion-chevron-left button-clear button-dark" href="#" ng-click="nextSlide()"></a>
-    <a class="button icon-left ion-chevron-right button-clear button-dark" href="#" ng-click="prevSlide()"></a>
-    <nav class="nav">
-        <div class="wrapper">
-            <ul class="dots">
-                <li class="dot" ng-repeat="card in ctrl.cards">
-                    <a href="#" ng-class="{'active':ctrl.isCurrentSlideIndex($index)}"
-                       ng-click="ctrl.setCurrentSlideIndex($index);">{{card.content}}</a></li>
-            </ul>
-        </div>
-    </nav>
+        <div ng-hide="!ctrl.isCurrentSlideIndex($index)"
+             ng-repeat="card in ctrl.cards | orderBy:'id'" 
+             class="list card">
 
+      <div class="item" ng-hide="!ctrl.isCurrentSlideIndex($index)">
+          <div class="item item-body">
+             <img  class="full-image slide-animation nonDraggableImage"
+         on-swipe-right="ctrl.nextSlide()" on-swipe-left="ctrl.prevSlide()"
+          ng-src="{{card.image}}"  >
+            <h2>{{$index}}/{{ctrl.cards.length}}</h2>
+            <p>{{card.image}}</p>
+            <p>
+              {{card.content}}
+            </p>
+          </div>
+
+        </div>
+     </div>
 
   </ion-content>
+
 </ion-view>
+
